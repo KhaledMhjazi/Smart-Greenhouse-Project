@@ -1,0 +1,153 @@
+##IAR Ninja build file
+
+
+#Rules
+rule COMPILER_XCL
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\XclFileGenerator.exe $xclcommand -f "$rspfile_name"
+  description = IAR_NEW_TOOL+++COMPILER_XCL+++$in+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\XclFileGenerator.exe" $flags
+  rspfile = $rspfile_name
+  rspfile_content = $flags
+
+rule INDEXER
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\SourceIndexer.exe $flags
+  depfile = $out.dep
+  description = IAR_NEW_TOOL+++INDEXER+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\SourceIndexer.exe" $flags
+
+rule MAKEBROWSE
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\makeBrowseData.exe $flags
+  description = IAR_NEW_TOOL+++MAKEBROWSE+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\makeBrowseData.exe" $flags
+
+rule PDBLINK
+  command = C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\PbdLink.exe $flags
+  description = IAR_NEW_TOOL+++PDBLINK+++$out+++"C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\common\bin\PbdLink.exe" $flags
+
+
+
+#Build steps
+build C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\calendar.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\khale\OneDrive\Skrivbord\Project\calendar.c -xcl_file C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\calendar.xcl -macro_file C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\calendar.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\khale\OneDrive\Skrivbord\Project\calendar.c -D NDEBUG -o C$:\Users\khale\OneDrive\Skrivbord\Project\Release\Obj\ --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Oh --predef_macros C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\calendar.tmp
+  rspfile_name = C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\calendar.xcl.rsp
+
+build C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\display.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\khale\OneDrive\Skrivbord\Project\display.c -xcl_file C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\display.xcl -macro_file C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\display.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\khale\OneDrive\Skrivbord\Project\display.c -D NDEBUG -o C$:\Users\khale\OneDrive\Skrivbord\Project\Release\Obj\ --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Oh --predef_macros C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\display.tmp
+  rspfile_name = C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\display.xcl.rsp
+
+build C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\exceptions.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\khale\OneDrive\Skrivbord\Project\exceptions.c -xcl_file C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\exceptions.xcl -macro_file C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\exceptions.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\khale\OneDrive\Skrivbord\Project\exceptions.c -D NDEBUG -o C$:\Users\khale\OneDrive\Skrivbord\Project\Release\Obj\ --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Oh --predef_macros C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\exceptions.tmp
+  rspfile_name = C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\exceptions.xcl.rsp
+
+build C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\keypad.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\khale\OneDrive\Skrivbord\Project\keypad.c -xcl_file C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\keypad.xcl -macro_file C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\keypad.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\khale\OneDrive\Skrivbord\Project\keypad.c -D NDEBUG -o C$:\Users\khale\OneDrive\Skrivbord\Project\Release\Obj\ --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Oh --predef_macros C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\keypad.tmp
+  rspfile_name = C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\keypad.xcl.rsp
+
+build C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\light.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\khale\OneDrive\Skrivbord\Project\light.c -xcl_file C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\light.xcl -macro_file C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\light.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\khale\OneDrive\Skrivbord\Project\light.c -D NDEBUG -o C$:\Users\khale\OneDrive\Skrivbord\Project\Release\Obj\ --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Oh --predef_macros C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\light.tmp
+  rspfile_name = C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\light.xcl.rsp
+
+build C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\LinkedList.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\khale\OneDrive\Skrivbord\Project\LinkedList.c -xcl_file C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\LinkedList.xcl -macro_file C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\LinkedList.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\khale\OneDrive\Skrivbord\Project\LinkedList.c -D NDEBUG -o C$:\Users\khale\OneDrive\Skrivbord\Project\Release\Obj\ --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Oh --predef_macros C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\LinkedList.tmp
+  rspfile_name = C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\LinkedList.xcl.rsp
+
+build C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\main.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\khale\OneDrive\Skrivbord\Project\main.c -xcl_file C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\main.xcl -macro_file C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\main.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\khale\OneDrive\Skrivbord\Project\main.c -D NDEBUG -o C$:\Users\khale\OneDrive\Skrivbord\Project\Release\Obj\ --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Oh --predef_macros C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\main.tmp
+  rspfile_name = C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\main.xcl.rsp
+
+build C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\servo.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\khale\OneDrive\Skrivbord\Project\servo.c -xcl_file C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\servo.xcl -macro_file C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\servo.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\khale\OneDrive\Skrivbord\Project\servo.c -D NDEBUG -o C$:\Users\khale\OneDrive\Skrivbord\Project\Release\Obj\ --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Oh --predef_macros C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\servo.tmp
+  rspfile_name = C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\servo.xcl.rsp
+
+build C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\startup_sam3x.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\khale\OneDrive\Skrivbord\Project\startup_sam3x.c -xcl_file C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\startup_sam3x.xcl -macro_file C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\startup_sam3x.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\khale\OneDrive\Skrivbord\Project\startup_sam3x.c -D NDEBUG -o C$:\Users\khale\OneDrive\Skrivbord\Project\Release\Obj\ --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Oh --predef_macros C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\startup_sam3x.tmp
+  rspfile_name = C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\startup_sam3x.xcl.rsp
+
+build C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\system_sam3x.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\khale\OneDrive\Skrivbord\Project\system_sam3x.c -xcl_file C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\system_sam3x.xcl -macro_file C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\system_sam3x.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\khale\OneDrive\Skrivbord\Project\system_sam3x.c -D NDEBUG -o C$:\Users\khale\OneDrive\Skrivbord\Project\Release\Obj\ --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Oh --predef_macros C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\system_sam3x.tmp
+  rspfile_name = C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\system_sam3x.xcl.rsp
+
+build C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\temp.xcl : COMPILER_XCL 
+  xclcommand = -source_file C$:\Users\khale\OneDrive\Skrivbord\Project\temp.c -xcl_file C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\temp.xcl -macro_file C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\temp.tmp -icc_path "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\bin\iccarm.exe"
+  flags = C$:\Users\khale\OneDrive\Skrivbord\Project\temp.c -D NDEBUG -o C$:\Users\khale\OneDrive\Skrivbord\Project\Release\Obj\ --endian=little --cpu=Cortex-M3 -e --fpu=None --dlib_config "C$:\Program$ Files\IAR$ Systems\Embedded$ Workbench$ 9.0\arm\inc\c\DLib_Config_Normal.h" -Oh --predef_macros C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\temp.tmp
+  rspfile_name = C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\temp.xcl.rsp
+
+build C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\calendar.pbi : INDEXER C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\calendar.xcl |  $
+C$:\Users\khale\OneDrive\Skrivbord\Project\calendar.c
+  flags = -out=C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\calendar.pbi -f C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\calendar.xcl
+
+build C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\display.pbi : INDEXER C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\display.xcl |  $
+C$:\Users\khale\OneDrive\Skrivbord\Project\display.c
+  flags = -out=C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\display.pbi -f C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\display.xcl
+
+build C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\exceptions.pbi : INDEXER C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\exceptions.xcl |  $
+C$:\Users\khale\OneDrive\Skrivbord\Project\exceptions.c
+  flags = -out=C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\exceptions.pbi -f C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\exceptions.xcl
+
+build C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\keypad.pbi : INDEXER C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\keypad.xcl |  $
+C$:\Users\khale\OneDrive\Skrivbord\Project\keypad.c
+  flags = -out=C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\keypad.pbi -f C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\keypad.xcl
+
+build C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\light.pbi : INDEXER C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\light.xcl |  $
+C$:\Users\khale\OneDrive\Skrivbord\Project\light.c
+  flags = -out=C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\light.pbi -f C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\light.xcl
+
+build C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\LinkedList.pbi : INDEXER C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\LinkedList.xcl |  $
+C$:\Users\khale\OneDrive\Skrivbord\Project\LinkedList.c
+  flags = -out=C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\LinkedList.pbi -f C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\LinkedList.xcl
+
+build C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\main.pbi : INDEXER C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\main.xcl |  $
+C$:\Users\khale\OneDrive\Skrivbord\Project\main.c
+  flags = -out=C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\main.pbi -f C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\main.xcl
+
+build C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\servo.pbi : INDEXER C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\servo.xcl |  $
+C$:\Users\khale\OneDrive\Skrivbord\Project\servo.c
+  flags = -out=C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\servo.pbi -f C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\servo.xcl
+
+build C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\startup_sam3x.pbi : INDEXER C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\startup_sam3x.xcl |  $
+C$:\Users\khale\OneDrive\Skrivbord\Project\startup_sam3x.c
+  flags = -out=C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\startup_sam3x.pbi -f C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\startup_sam3x.xcl
+
+build C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\system_sam3x.pbi : INDEXER C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\system_sam3x.xcl |  $
+C$:\Users\khale\OneDrive\Skrivbord\Project\system_sam3x.c
+  flags = -out=C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\system_sam3x.pbi -f C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\system_sam3x.xcl
+
+build C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\temp.pbi : INDEXER C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\temp.xcl |  $
+C$:\Users\khale\OneDrive\Skrivbord\Project\temp.c
+  flags = -out=C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\temp.pbi -f C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\temp.xcl
+
+build C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\project.pbw : MAKEBROWSE C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\project.pbd
+  flags = C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\project.pbd -output C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\project.pbw
+
+build C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\project_part0.pbi : PDBLINK C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\calendar.pbi |  $
+C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\display.pbi $
+C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\exceptions.pbi
+  flags = -M C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\project_part0.pbi C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\calendar.pbi C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\display.pbi C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\exceptions.pbi
+
+build C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\project_part1.pbi : PDBLINK C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\keypad.pbi |  $
+C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\light.pbi $
+C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\LinkedList.pbi
+  flags = -M C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\project_part1.pbi C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\keypad.pbi C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\light.pbi C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\LinkedList.pbi
+
+build C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\project_part2.pbi : PDBLINK C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\main.pbi |  $
+C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\servo.pbi $
+C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\startup_sam3x.pbi
+  flags = -M C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\project_part2.pbi C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\main.pbi C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\servo.pbi C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\startup_sam3x.pbi
+
+build C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\project_part3.pbi : PDBLINK C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\system_sam3x.pbi |  $
+C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\temp.pbi
+  flags = -M C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\project_part3.pbi C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\system_sam3x.pbi C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\temp.pbi
+
+build C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\project.pbd : PDBLINK C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\project_part0.pbi |  $
+C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\project_part1.pbi $
+C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\project_part2.pbi $
+C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\project_part3.pbi
+  flags = -M C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\project.pbd C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\project_part0.pbi C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\project_part1.pbi C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\project_part2.pbi C$:\Users\khale\OneDrive\Skrivbord\Project\Release\BrowseInfo\project_part3.pbi
+
